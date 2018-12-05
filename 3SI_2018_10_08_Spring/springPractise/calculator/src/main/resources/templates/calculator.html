@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Calculator</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+    <form action="#" th:action="@{/calculator}" th:object="${calculator}" method="post">
+
+        <input type="text" th:field="*{firstNumber}"/>FirstNumber<br>
+        <input type="text" th:field="*{secondNumber}"/>SecondNumber<br>
+
+        <input type="radio" name="options" value="add" th:field="*{operation}"/>Add<br/>
+        <input type="radio" name="options" value="subtract" th:field="*{operation}" />Subract<br/>
+        <input type="radio" name="options" value="multiply" th:field="*{operation}"/>Multiply<br/>
+        <input type="radio" name="options" value="divide" th:field="*{operation}" />Divide<br/>
+
+        <input type="submit" value="Calculate"/>
+
+
+    </form>
+    </body>
+</html>

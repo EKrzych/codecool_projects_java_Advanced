@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+
+       default-autowire="byName" >
+
+    <context:annotation-config />
+
+    <bean id = "simpleCsvConverter" class = "com.codecool.SimpleCsvConverter" scope = "prototype">
+    </bean>
+
+    <bean id = "fileReader" class = "com.codecool.FileReader"/>
+
+    <bean id = "outputFormatterFactory" class = "com.codecool.formatter.OutputFormatterFactory"/>
+
+
+    <bean id="TABLE" class="com.codecool.OutputFormat" factory-method="valueOf">
+        <constructor-arg value = "TABLE"/>
+    </bean>
+    <bean id="JSON" class="com.codecool.OutputFormat" factory-method="valueOf">
+        <constructor-arg value = "JSON"/>
+    </bean>
+    <bean id="XML" class="com.codecool.OutputFormat" factory-method="valueOf">
+        <constructor-arg value = "XML"/>
+    </bean>
+
+
+    <bean id = "JsonOutputFormatter" class = "com.codecool.formatter.JsonOutputFormatter"/>
+    <bean id = "XmlOutputFormatter" class = "com.codecool.formatter.XmlOutputFormatter"/>
+    <bean id = "TableOutputFormatter" class = "com.codecool.formatter.TableOutputFormatter"/>
+
+</beans>

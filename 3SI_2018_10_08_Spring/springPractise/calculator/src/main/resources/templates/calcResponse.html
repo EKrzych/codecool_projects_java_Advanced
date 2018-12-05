@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <p th:text= "'Your result is: ' + ${calculator.calculate()}" />
+    <a href="\calculator">Do another calc</a>
+</body>
+</html>
